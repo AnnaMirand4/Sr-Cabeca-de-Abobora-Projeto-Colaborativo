@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from '../Styles/componentes/listagem.module.css';
 import Subtitle from './Subtitle';
+import Text from './Text';
 
 const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -18,7 +19,7 @@ const Listagem = () => {
           },
         });
 
-        const filmes = response.data.results.slice(0, 10);
+        const filmes = response.data.results.slice(0, 9);
         setFilmesRecentes(filmes);
       } catch (error) {
         console.error('Erro ao buscar filmes recentes:', error);
@@ -31,6 +32,7 @@ const Listagem = () => {
   return (
     <div className={styles.container}>
       <Subtitle content="Filmes Mais Recentes" />
+      <div className={styles.poster}>
       <ul>
         {filmesRecentes.map((filme) => (
           <li key={filme.id}>
@@ -39,11 +41,12 @@ const Listagem = () => {
                 src={`${baseUrl}${filme.poster_path}`}
                 alt={filme.title}
               />
-              <p>{filme.title}</p>
+              <Text content={filme.title} />
             </Link>
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 };

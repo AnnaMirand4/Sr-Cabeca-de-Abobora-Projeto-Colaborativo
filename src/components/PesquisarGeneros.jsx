@@ -2,6 +2,7 @@ import styles from '../Styles/componentes/pesquisarGeneros.module.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Text from './Text';
 
 const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -54,7 +55,7 @@ const PesquisarGeneros = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      <section className={styles.container}>
         <label htmlFor="generoSelecionado">Selecione um gênero:</label>
         <select id="generoSelecionado" value={selecionarGenero} onChange={handleChangeGenre}>
           <option value="">Selecione...</option>
@@ -67,7 +68,7 @@ const PesquisarGeneros = () => {
 
 
         {selecionarGenero && <h2>Filmes do Gênero {genero.find((genre) => genre.id === parseInt(selecionarGenero))?.name}:</h2>}
-
+        <div className={styles.poster}>
         <ul>
           {filmes.map((filme) => (
             <li key={filme.id}>
@@ -76,11 +77,12 @@ const PesquisarGeneros = () => {
                 <img className={styles.posterFilme} src={`${baseUrl}${filme.poster_path}`} alt={filme.title} />
               </Link>
             )}
-           {filme.title}
+           <Text content={filme.title} />
             </li>
           ))}
         </ul>
-      </div>
+        </div>
+      </section>
     </>
   );
 };
