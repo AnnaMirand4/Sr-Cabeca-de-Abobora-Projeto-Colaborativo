@@ -73,7 +73,7 @@ const PesquisarGeneros = () => {
             <li key={filme.id}>
             {filme.backdrop_path && (
               <Link to={`/sobreFilme/${filme.id}`}>
-                <img className={styles.posterFilme} src={`${baseUrl}${filme.backdrop_path}`} alt={filme.title} />
+                <img className={styles.posterFilme} src={`${baseUrl}${filme.poster_path}`} alt={filme.title} />
               </Link>
             )}
            {filme.title}

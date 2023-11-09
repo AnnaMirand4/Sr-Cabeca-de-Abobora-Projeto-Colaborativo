@@ -34,11 +34,13 @@ const SobreFilme = () => {
 
   return (
     <div>
-      <img className={styles.posterFilme} src={`${baseUrl}${detalhesDoFilme.backdrop_path}`} alt={detalhesDoFilme.title} />
+      <img className={styles.posterFilme} src={`${baseUrl}${detalhesDoFilme.poster_path}`} alt={detalhesDoFilme.title} />
       <Subtitle content='Título: ' />
       <Text content={detalhesDoFilme.title} />
       <Subtitle content='Sinopse: ' />
       <Text content={detalhesDoFilme.overview} />
+      <Subtitle content='Ano: ' />
+      <Text content={detalhesDoFilme.release_date?.substring(0, 4)} />
     </div>
   );
 };
