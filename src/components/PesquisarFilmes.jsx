@@ -8,10 +8,10 @@ import Text from './Text';
 
 const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
+
 const PesquisarFilmes = () => {
   const [termoPesquisa, setTermoPesquisa] = useState('');
   const [filmeEncontrado, setFilmeEncontrado] = useState(null);
-  const [mostrarPesquisa, setMostrarPesquisa] = useState(false);
 
   const handlePesquisarFilme = async () => {
     try {
@@ -31,49 +31,41 @@ const PesquisarFilmes = () => {
     }
   };
 
-    useEffect(() => {
-        if (termoPesquisa.trim() !== '') {
-        handlePesquisarFilme();
-        } else {
-        setFilmeEncontrado(null);
-        }
-    }, [termoPesquisa]);
-
-  const handleTogglePesquisa = () => {
-    setMostrarPesquisa(!mostrarPesquisa);
-  };
+  useEffect(() => {
+    if (termoPesquisa.trim() !== '') {
+      handlePesquisarFilme();
+    } else {
+      setFilmeEncontrado(null);
+    }
+  }, [termoPesquisa]);
 
   return (
     <div className={styles.pesquisarFilmes}>
-      <button onClick={handleTogglePesquisa}>
-        <FaSearch />
-      </button>
-      {mostrarPesquisa && (
-        <>
-          <label htmlFor="termoPesquisa">Pesquisar Filme:</label>
-          <input
-            type="text"
-            id="termoPesquisa"
-            value={termoPesquisa}
-            onChange={(e) => setTermoPesquisa(e.target.value)}
-          />
-        </>
-      )}
-      {filmeEncontrado ? (
+      <FaSearch />
+      <>
+        <label htmlFor="termoPesquisa">Pesquisar Filme:</label>
+        <input
+          type="text"
+          id="termoPesquisa"
+          value={termoPesquisa}
+          onChange={(e) => setTermoPesquisa(e.target.value)}
+        />
+      </>
+      {termoPesquisa.trim() !== '' && filmeEncontrado ? (
         <div>
-            <Subtitle content= 'Filme Encontrado!' />
+          <Subtitle content="Filme Encontrado!" />
           <Link to={`/sobreFilme/${filmeEncontrado.id}`}>
             <img
               className={styles.posterFilme}
-              src={`${baseUrl}${filmeEncontrado.backdrop_path}`}
+              src={`${baseUrl}${filmeEncontrado.poster_path}`}
               alt={filmeEncontrado.title}
             />
           </Link>
           <Subtitle content={filmeEncontrado.title} />
         </div>
       ) : (
-        mostrarPesquisa && (
-            <Text content= 'Filme não encontrado no site' />
+        termoPesquisa.trim() !== '' && (
+          <Text content="Filme não encontrado no site" />
         )
       )}
     </div>
