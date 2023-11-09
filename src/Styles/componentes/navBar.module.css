@@ -1,3 +1,23 @@
 .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     
+}
+
+.menuIcon {
+    margin: 1rem;
+    
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.ul, li {
+    padding: 0;
+    margin: 1rem;
+    list-style: none;
 }
