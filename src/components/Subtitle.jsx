@@ -1,6 +1,6 @@
 const Subtitle = ({content}) => {
     return (
-      <h2>{content}</h2>
+      <h2 className="Subtitle">{content}</h2>
     )
   }
   
