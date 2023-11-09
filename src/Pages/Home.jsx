@@ -2,7 +2,7 @@ import style from '../Styles/Page/home.module.css'
 import Listagem from '../components/Listagem'
 import Title from '../components/Title'
 import Subtitle from '../components/Subtitle'
-import logoImage from '../assets/Senhor Cabeça de Abóbora Favcon.png'
+import logoImage from '../assets/Senhor Cabeça de Abóbora Favcon com Fundo Cinza.png'
 import Text from '../components/Text'
 
 const Home = () => {
