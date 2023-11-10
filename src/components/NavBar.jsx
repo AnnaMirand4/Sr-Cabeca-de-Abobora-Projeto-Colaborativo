@@ -19,14 +19,16 @@ const Navbar = () => {
         <div className={style.icon} onClick={handleMenuToggle}>
           <TiThMenuOutline size={25} />
         </div>
+        <div className={style.menu}>
         {menuOpen && (
-          <div className={style.menu}>
+          
             <ul>
               <li><Link className={style.menuLink} to='/'>Início</Link> </li>
               <li><Link className={style.menuLink} to='/listaFilmes'>Lista de Filmes</Link></li>
             </ul>
-          </div>
+          
         )}
+        </div>
 
         <div className={style.logo}>
         <img src={logotxt} alt="Logo do Site com o nome Senhor cabeça de abóbora e uma imagem de uma abobora de halloween com um chapéu de bruxa roxo"/>

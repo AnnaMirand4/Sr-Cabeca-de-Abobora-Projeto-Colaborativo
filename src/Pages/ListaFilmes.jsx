@@ -1,5 +1,5 @@
 import PesquisarGeneros from "../components/PesquisarGeneros"
-import Subtitle from "../components/Subtitle"
+import Title from "../components/Title"
 import style from  '../Styles/Page/listafilme.module.css'
 
 const ListaFilmes = () => {
@@ -7,7 +7,7 @@ const ListaFilmes = () => {
     <>
     <main className="container">
 
-    <Subtitle content='Filtros de Busca' />
+    <div className={style.text}> <Title content='Filtros de Busca:' /> </div>
     <PesquisarGeneros />
     
     </main>

@@ -9,6 +9,23 @@
  
 }
 
+
+
 .icon {
     color: #fc8722;
+    position: relative;
 }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menuLink {
+    color: #fc8722; /* Cor laranja para o texto no menu */
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+  
