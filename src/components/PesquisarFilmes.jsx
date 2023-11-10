@@ -6,7 +6,6 @@ import styles from '../Styles/componentes/pesquisarFilmes.module.css';
 import Subtitle from './Subtitle';
 import Text from './Text';
 
-const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
 
 const PesquisarFilmes = () => {
@@ -15,19 +14,21 @@ const PesquisarFilmes = () => {
 
   const handlePesquisarFilme = async () => {
     try {
-      const response = await axios.get('https://api.themoviedb.org/3/search/movie', {
+      const response = await axios.get('https://reprograma-backend-crud-projeto.onrender.com/', {
         params: {
-          api_key: 'e753cc6024016884351bf6a084813ac0',
           query: termoPesquisa,
         },
       });
 
-      const primeiroResultado = response.data.results[0];
+      const primeiroResultado =response.data[0];
+      
 
       setFilmeEncontrado(primeiroResultado);
+      console.log(response.data)
     } catch (error) {
       console.error('Erro ao buscar filme:', error);
       setFilmeEncontrado(null);
+      
     }
   };
 
@@ -59,11 +60,11 @@ const PesquisarFilmes = () => {
           <Link to={`/sobreFilme/${filmeEncontrado.id}`}>
             <img
               className={styles.posterFilme}
-              src={`${baseUrl}${filmeEncontrado.poster_path}`}
-              alt={filmeEncontrado.title}
+              src={filmeEncontrado.poster}
+              alt={filmeEncontrado.titulo}
             />
           </Link>
-          <Subtitle content={filmeEncontrado.title} />
+          <Subtitle content={filmeEncontrado.titulo} />
         </div>
       ) : (
         termoPesquisa.trim() !== '' && (
