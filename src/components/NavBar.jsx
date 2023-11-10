@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import {useState} from "react";
 import {TiThMenuOutline} from "react-icons/ti"
 import style from "../Styles/componentes/navBar.module.css"
-import logoTxt from '../assets/Senhor Cabeça de Abóbora Nome com Fundo.png'
+import logotxt from '../assets/Senhor Cabeça de Abóbora Nome com Fundo.png'
 import { FaSearch } from 'react-icons/fa';
 
 
@@ -16,9 +16,8 @@ const Navbar = () => {
     return (
       <nav className={style.container}> 
 
-        <div className={style.menuIcon} onClick={handleMenuToggle}>
-          <TiThMenuOutline />
-
+        <div className={style.icon} onClick={handleMenuToggle}>
+          <TiThMenuOutline size={25} />
         </div>
         {menuOpen && (
           <div className={style.menu}>
@@ -28,16 +27,17 @@ const Navbar = () => {
             </ul>
           </div>
         )}
+
         <div className={style.logo}>
-        <img src={logoTxt} alt="Logo do Site com o nome Senhor cabeça de abóbora e uma imagem de uma abobora de halloween com um chapéu de bruxa roxo" />
+        <img src={logotxt} alt="Logo do Site com o nome Senhor cabeça de abóbora e uma imagem de uma abobora de halloween com um chapéu de bruxa roxo"/>
         </div>
 
-        
-        <div className={style.searchIcon}>
+        <div className={style.icon}>
           <Link to='/pesquisa'>
-              <FaSearch />
+              <FaSearch color='#fc8722' size={25} />
           </Link>
         </div>
+  
       </nav>
     );
   };

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from '../Styles/componentes/listagem.module.css';
 import Subtitle from './Subtitle';
 import Text from './Text';
+import Title from './Title';
 
 const baseUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -31,7 +32,7 @@ const Listagem = () => {
 
   return (
     <div className={styles.container}>
-      <Subtitle content="Filmes Mais Recentes" />
+      <Title className={styles.containerTitle} content="ADICIONADOS RECENTEMENTE" />
       <div className={styles.poster}>
       <ul>
         {filmesRecentes.map((filme) => (
