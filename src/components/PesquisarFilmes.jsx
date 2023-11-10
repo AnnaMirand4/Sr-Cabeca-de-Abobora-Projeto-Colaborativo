@@ -40,9 +40,11 @@ const PesquisarFilmes = () => {
   }, [termoPesquisa]);
 
   return (
-    <div className={styles.pesquisarFilmes}>
+    <>
+    <div className={styles.container}>
+      
+      <div className={styles.inputContainer}>
       <FaSearch />
-      <>
         <label htmlFor="termoPesquisa">Pesquisar Filme:</label>
         <input
           type="text"
@@ -50,9 +52,9 @@ const PesquisarFilmes = () => {
           value={termoPesquisa}
           onChange={(e) => setTermoPesquisa(e.target.value)}
         />
-      </>
+       </div>
       {termoPesquisa.trim() !== '' && filmeEncontrado ? (
-        <div>
+        <div className={styles.filmeContainer}>
           <Subtitle content="Filme Encontrado!" />
           <Link to={`/sobreFilme/${filmeEncontrado.id}`}>
             <img
@@ -69,6 +71,7 @@ const PesquisarFilmes = () => {
         )
       )}
     </div>
+    </>
   );
 };
 

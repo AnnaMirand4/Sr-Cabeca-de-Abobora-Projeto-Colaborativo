@@ -17,7 +17,7 @@ const Router = () => {
             <Route path='/pesquisa' element= {<Pesquisa />} />
         
         </Routes>
-        <Footer content="Feito com ♡ " />
+        <Footer content="Feito com ♡ por Anna Caroline Miranda, Beatriz Cristina Inho e Nazaré Almeida" />
     </BrowserRouter>
     )
 }

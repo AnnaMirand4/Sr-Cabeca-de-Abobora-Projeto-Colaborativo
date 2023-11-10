@@ -1,4 +1,43 @@
-
-img {
-    max-width: 10rem;
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #e9e4e1;
+    flex-direction: column;
 }
+  
+  input {
+    max-width: 100%;
+    width: 30%;
+    margin: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .posterFilme {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  .FaSearch {
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  
+  .filmeContainer {
+    color: #94918f;
+    font-size: 18px;
+    margin: 10px;
+  }
+
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    justify-content: center;
+  }
