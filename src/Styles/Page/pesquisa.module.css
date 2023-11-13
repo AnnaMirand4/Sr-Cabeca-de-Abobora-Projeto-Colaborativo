@@ -1,4 +1,5 @@
 .container {
-    background-color: rgb(32, 33, 36);
+    max-width: 100%;
+    height: 27rem;
     
 }

@@ -32,6 +32,7 @@
     text-align: center;
     margin: 10px;
     width: 30%; 
+    flex-direction: column;
   }
   
   .posterFilme {

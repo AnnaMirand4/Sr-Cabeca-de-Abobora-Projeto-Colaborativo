@@ -2,9 +2,10 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
     background-color: #e9e4e1;
     flex-direction: column;
+    max-width: 100%;
+    height: auto;
 }
   
   input {
@@ -40,4 +41,8 @@
     outline: none;
     background-color: transparent;
     justify-content: center;
+  }
+
+  img {
+    width: 20rem;
   }
