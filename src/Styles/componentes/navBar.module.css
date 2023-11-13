@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
+    height: 15rem;
  
 }
 
@@ -18,7 +19,16 @@
 
   .menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+  }
+
+  ul, li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 3rem;
+    padding: 0.5rem;
   }
   
   .menuLink {
