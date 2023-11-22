@@ -14,7 +14,7 @@
     margin: 10px;
     padding: 8px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   
   .posterFilme {
@@ -32,6 +32,7 @@
     color: #94918f;
     font-size: 18px;
     margin: 10px;
+
   }
 
   .inputContainer {
@@ -41,8 +42,16 @@
     outline: none;
     background-color: transparent;
     justify-content: center;
+    margin-top: 11rem;
+    margin-bottom: 6rem;
   }
 
   img {
     width: 20rem;
+  }
+
+  .posterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }

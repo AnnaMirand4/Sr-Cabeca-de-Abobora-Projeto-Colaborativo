@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaSearch } from 'react-icons/fa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styles from '../Styles/componentes/pesquisarFilmes.module.css';
@@ -43,7 +42,7 @@ const PesquisarFilmes = () => {
     <>
       <div className={styles.container}>
         <div className={styles.inputContainer}>
-          <FaSearch />
+         
           <label htmlFor="termoPesquisa">Pesquisar Filme:</label>
           <input
             type="text"
@@ -53,7 +52,7 @@ const PesquisarFilmes = () => {
           />
         </div>
         {termoPesquisa.trim() !== '' && filmesEncontrados.length > 0 ? (
-          <div>
+          <div className={styles.posterContainer}>
             {filmesEncontrados.map((filme) => (
               <div key={filme.id} className={styles.filmeContainer}>
                 <Link to={`/sobreFilme/${filme.id}`}>
